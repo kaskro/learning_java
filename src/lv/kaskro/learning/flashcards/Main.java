@@ -85,7 +85,8 @@ public class Main {
 
         File importFile = new File(pathToImportFile);
         cardCount = cardFileManager.loadCardsFromFile(importFile, flashCards);
-        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been loaded.");
+//        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been loaded.");
+        System.out.println(cardCount + " cards have been loaded.");
     }
 
     private static void saveCards(FlashCards flashCards) {
@@ -100,7 +101,8 @@ public class Main {
 
         File exportFile = new File(pathToExportFile);
         cardCount = cardFileManager.saveCardsToFile(exportFile, flashCards);
-        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been saved.");
+//        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been saved.");
+        System.out.println(cardCount + " cards have been saved.");
     }
 
     private static void askRandomCards(FlashCards flashCards) {
