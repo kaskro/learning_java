@@ -22,14 +22,17 @@ public class Main {
                 case "remove":
                     removeCard(flashCards);
                     break;
-                case "import":
-                    loadCards(flashCards);
-                    break;
-                case "export":
-                    saveCards(flashCards);
-                    break;
-                case "ask":
-                    askRandomCards(flashCards);
+//                case "import":
+//                    loadCards(flashCards);
+//                    break;
+//                case "export":
+//                    saveCards(flashCards);
+//                    break;
+//                case "ask":
+//                    askRandomCards(flashCards);
+//                    break;
+                case "p":
+                    flashCards.printFlashCards();
                     break;
                 case "exit":
                     System.out.println("Bye bye!");
@@ -46,16 +49,16 @@ public class Main {
 
         System.out.println("The card:");
         flashCard.setTerm(scanner.nextLine());
-        if (flashCards.hasTerm(flashCard.getTerm())) {
-            System.out.println("The card \"" + flashCard.getTerm() + "\" already exists.");
-            return;
-        }
+//        if (flashCards.hasTerm(flashCard.getTerm())) {
+//            System.out.println("The card \"" + flashCard.getTerm() + "\" already exists.");
+//            return;
+//        }
         System.out.println("The definition of the card");
         flashCard.setDefinition(scanner.nextLine());
-        if (flashCards.hasDefinition(flashCard.getDefinition())) {
-            System.out.println("The definition \"" + flashCard.getDefinition() + "\" already exists.");
-            return;
-        }
+//        if (flashCards.hasDefinition(flashCard.getDefinition())) {
+//            System.out.println("The definition \"" + flashCard.getDefinition() + "\" already exists.");
+//            return;
+//        }
         flashCards.addCard(flashCard);
         System.out.println("The pair (\"" + flashCard.getTerm() + "\":\"" + flashCard.getDefinition() + "\") has been added.");
     }
@@ -73,53 +76,53 @@ public class Main {
         }
     }
 
-    private static void loadCards(FlashCards flashCards) {
+//    private static void loadCards(FlashCards flashCards) {
+//
+//        String pathToImportFile;
+//        int cardCount;
+//        CardFileManager cardFileManager = new CardFileManager();
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("File name:");
+//        pathToImportFile = scanner.nextLine();
+//
+//        File importFile = new File(pathToImportFile);
+//        cardCount = cardFileManager.loadCardsFromFile(importFile, flashCards);
+////        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been loaded.");
+//        System.out.println(cardCount + " cards have been loaded.");
+//    }
 
-        String pathToImportFile;
-        int cardCount;
-        CardFileManager cardFileManager = new CardFileManager();
-        Scanner scanner = new Scanner(System.in);
+//    private static void saveCards(FlashCards flashCards) {
+//
+//        String pathToExportFile;
+//        int cardCount;
+//        CardFileManager cardFileManager = new CardFileManager();
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("File name:");
+//        pathToExportFile = scanner.nextLine();
+//
+//        File exportFile = new File(pathToExportFile);
+//        cardCount = cardFileManager.saveCardsToFile(exportFile, flashCards);
+////        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been saved.");
+//        System.out.println(cardCount + " cards have been saved.");
+//    }
 
-        System.out.println("File name:");
-        pathToImportFile = scanner.nextLine();
-
-        File importFile = new File(pathToImportFile);
-        cardCount = cardFileManager.loadCardsFromFile(importFile, flashCards);
-//        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been loaded.");
-        System.out.println(cardCount + " cards have been loaded.");
-    }
-
-    private static void saveCards(FlashCards flashCards) {
-
-        String pathToExportFile;
-        int cardCount;
-        CardFileManager cardFileManager = new CardFileManager();
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("File name:");
-        pathToExportFile = scanner.nextLine();
-
-        File exportFile = new File(pathToExportFile);
-        cardCount = cardFileManager.saveCardsToFile(exportFile, flashCards);
-//        System.out.println(cardCount + ((cardCount == 1) ? " card " : " cards ") + "have been saved.");
-        System.out.println(cardCount + " cards have been saved.");
-    }
-
-    private static void askRandomCards(FlashCards flashCards) {
-        int timesToAsk;
-        new FlashCard();
-        FlashCard flashCard;
-        Scanner scanner = new Scanner(System.in);
-        if (flashCards.size() > 0) {
-            System.out.println("How many times to ask?");
-            timesToAsk = Integer.parseInt(scanner.nextLine());
-            for (int i = 0; i < timesToAsk; i++) {
-                flashCard = flashCards.ask();
-                System.out.println("Print the definition of \"" + flashCard.getTerm() + "\"");
-                flashCards.checkAnswer(flashCard.getTerm(), scanner.nextLine());
-            }
-        } else {
-            System.out.println("Sorry, nothing to ask!");
-        }
-    }
+//    private static void askRandomCards(FlashCards flashCards) {
+//        int timesToAsk;
+//        new FlashCard();
+//        FlashCard flashCard;
+//        Scanner scanner = new Scanner(System.in);
+//        if (flashCards.size() > 0) {
+//            System.out.println("How many times to ask?");
+//            timesToAsk = Integer.parseInt(scanner.nextLine());
+//            for (int i = 0; i < timesToAsk; i++) {
+//                flashCard = flashCards.getRandomCard();
+//                System.out.println("Print the definition of \"" + flashCard.getTerm() + "\"");
+//                flashCards.checkAnswer(flashCard.getTerm(), scanner.nextLine());
+//            }
+//        } else {
+//            System.out.println("Sorry, nothing to ask!");
+//        }
+//    }
 }

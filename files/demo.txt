@@ -1,2 +1,2 @@
-Demo
-none
+lv.kaskro.learning.flashcards.FlashCard@7ec7ffd3
+0

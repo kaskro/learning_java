@@ -33,21 +33,21 @@ public class CardFileManager {
         return cardCount;
     }
 
-    public int saveCardsToFile(File file, FlashCards flashCards) {
-        int cardCount = 0;
-        try (FileWriter fileWriter = new FileWriter(file)) {
-            for (var card : flashCards.getCards().entrySet()) {
-                fileWriter.write(card.getKey() + "\n");
-                fileWriter.write(card.getValue() + "\n");
-                cardCount++;
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found.");
-            return -1;
-        } catch (IOException e) {
-            System.out.printf("An exception occurs %s", e.getMessage());
-            return -1;
-        }
-        return cardCount;
-    }
+//    public int saveCardsToFile(File file, FlashCards flashCards) {
+//        int cardCount = 0;
+//        try (FileWriter fileWriter = new FileWriter(file)) {
+//            for (var card : flashCards.getCards().entrySet()) {
+//                fileWriter.write(card.getKey() + "\n");
+//                fileWriter.write(card.getValue() + "\n");
+//                cardCount++;
+//            }
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found.");
+//            return -1;
+//        } catch (IOException e) {
+//            System.out.printf("An exception occurs %s", e.getMessage());
+//            return -1;
+//        }
+//        return cardCount;
+//    }
 }
